@@ -1,8 +1,8 @@
+import 'package:amap_location_plugin/amap_location_plugin.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter/services.dart';
-import 'package:amap_location/amap_location.dart';
 
 void main() => runApp(new MyApp());
 
