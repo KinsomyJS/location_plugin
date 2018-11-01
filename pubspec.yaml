@@ -1,6 +1,6 @@
 name: amap_location_plugin
 description: A new Flutter Location plugin based on Amap SDK.
-version: 0.0.1
+version: 0.1.1
 author: Kinsomy <fjs19960420@gmail.com>
 homepage: https://github.com/KinsomyJS/location_plugin
 

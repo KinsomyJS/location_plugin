@@ -5,6 +5,11 @@
 
 A Flutter plugin to access location information with AMap Location SDK.
 
+This plugin now is only developed for Android platform, so it only inplements the android amap sdk.
+which provides the function with location infomation for flutter app in android platform in china.
+
+According to the usage description below, developer can get the location infomation easily.
+
 ## Usage
 To use this plugin, add `amap_location_plugin` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
 
