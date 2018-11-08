@@ -1,6 +1,6 @@
 # Amap Location Plugin
 
-[![pub package](https://img.shields.io/badge/pub-0.0.1-orange.svg)](https://pub.dartlang.org/packages/amap_location_plugin)
+[![pub package](https://img.shields.io/badge/pub-0.2.0-orange.svg)](https://pub.dartlang.org/packages/amap_location_plugin)
 
 
 A Flutter plugin to access location information with AMap Location SDK.
@@ -20,6 +20,17 @@ To use this plugin, add `amap_location_plugin` as a [dependency in your pubspec.
 dependencies {
     implementation 'com.amap.api:location:latest.integration'
 }
+```
+
+在flutter的pubspec.yaml文件里添加
+
+```
+dependencies:
+  flutter:
+    sdk: flutter
+
+  ...
+  amap_location_plugin: ^0.1.1
 ```
 
 ### 2.申请key
@@ -79,11 +90,11 @@ _amapLocation.startLocation;
 //stop location
 _amapLocation.stopLocation;
 
-// Access current city
-print(_amapLocation.getCity);
+// Access current location
+print(_amapLocation.getLocation);
 
 // Be informed when the state (full, charging, discharging) changes
-_amapLocation.onLocationChanged.listen((String city) {
+_amapLocation.onLocationChanged.listen((String location) {
   // Do something with new state
 });
 ```

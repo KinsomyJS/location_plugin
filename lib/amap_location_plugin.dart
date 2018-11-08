@@ -20,15 +20,15 @@ class AmapLocation {
 
   final MethodChannel _methodChannel;
   final EventChannel _eventChannel;
-  Stream<String> _onCityFetched;
+  Stream<String> _onLocationFetched;
 
-  /// Fires whenever the city send.
+  /// Fires whenever the location send.
   Stream<String> get onLocationChanged {
-    if (_onCityFetched == null) {
-      _onCityFetched =
+    if (_onLocationFetched == null) {
+      _onLocationFetched =
           _eventChannel.receiveBroadcastStream().map((dynamic event) => event);
     }
-    return _onCityFetched;
+    return _onLocationFetched;
   }
 
   Future<void> get startLocation =>
@@ -36,7 +36,7 @@ class AmapLocation {
 
   Future<void> get stopLocation => _methodChannel.invokeMethod("stopLocation");
 
-  Future<String> get getCity => _methodChannel
-      .invokeMethod("getCity")
+  Future<String> get getLocation => _methodChannel
+      .invokeMethod("getLocation")
       .then<String>((dynamic result) => result);
 }

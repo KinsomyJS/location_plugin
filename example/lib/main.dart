@@ -12,32 +12,32 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _city = 'Unknown';
+  String _location = 'Unknown';
   AmapLocation _amapLocation = AmapLocation();
-  StreamSubscription<String> _citySubscription;
+  StreamSubscription<String> _locationSubscription;
 
   @override
   void initState() {
     super.initState();
-    _citySubscription = _amapLocation.onLocationChanged.listen((String city) {
-      print(city);
+    _locationSubscription = _amapLocation.onLocationChanged.listen((String location) {
+      print(location);
       if (!mounted) return;
       setState(() {
-        _city = city;
+        _location = location;
       });
     });
 //    initPlatformState();
   }
 
   // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> getCity() async {
-    String city;
+  Future<void> getLocation() async {
+    String location;
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
-      city = await _amapLocation.getCity;
-      print(city);
+      location = await _amapLocation.getLocation;
+      print(location);
     } on PlatformException {
-      city = 'Failed to get city.';
+      location = 'Failed to get location.';
     }
 
     // If the widget was removed from the tree while the asynchronous platform
@@ -46,7 +46,7 @@ class _MyAppState extends State<MyApp> {
     if (!mounted) return;
 
     setState(() {
-      _city = city;
+      _location = location;
     });
   }
 
@@ -70,7 +70,7 @@ class _MyAppState extends State<MyApp> {
             children: <Widget>[
               new FlatButton(onPressed: startLocation, child: Text("开始定位")),
               new FlatButton(onPressed: stopLocation, child: Text("停止定位")),
-              new Text('Running on: $_city\n'),
+              new Text('Running on: $_location\n'),
             ],
           ),
         ),
@@ -81,8 +81,8 @@ class _MyAppState extends State<MyApp> {
   @override
   void dispose() {
     super.dispose();
-    if (_citySubscription != null) {
-      _citySubscription.cancel();
+    if (_locationSubscription != null) {
+      _locationSubscription.cancel();
     }
   }
 }
