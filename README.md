@@ -10,6 +10,8 @@ which provides the function with location infomation for flutter app in android 
 
 According to the usage description below, developer can get the location infomation easily.
 
+![](img/1.png)
+
 ## Usage
 To use this plugin, add `amap_location_plugin` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
 
