@@ -39,6 +39,10 @@ android {
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        manifestPlaceholders = [
+                LOCATION_APP_KEY : "b947abf0a6820efedc65d06428f14281", /// 高德地图key
+        ]
     }
 
     buildTypes {
